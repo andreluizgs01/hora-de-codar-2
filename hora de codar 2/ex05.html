@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Média Aritmética de 6 Valores</title>
+    <script>
+        function calcularMedia() {
+            // Inicializa um array para armazenar os valores informados
+            let valores = [];
+            let soma = 0;
+
+            // Solicita ao usuário que informe seis valores
+            for (let i = 1; i <= 6; i++) {
+                let valor = parseFloat(prompt("Informe o valor " + i + ":"));
+                
+                // Verifica se o valor inserido é um número válido
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    return;
+                }
+
+                // Adiciona o valor ao array e soma
+                valores.push(valor);
+                soma += valor;
+            }
+
+            // Calcula a média aritmética
+            let media = soma / 6;
+
+            // Exibe os valores informados e a média aritmética na tela
+            document.getElementById("valores").innerHTML = "Valores informados: " + valores.join(", ");
+            document.getElementById("media").innerHTML = "Média aritmética: " + media;
+        }
+    </script>
+</head>
+<body>
+    <h1>Média Aritmética de 6 Valores</h1>
+    <button onclick="calcularMedia()">Calcular</button>
+    <p id="valores"></p>
+    <p id="media"></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soma de Números Inferiores a 72</title>
+    <script>
+        function processarNumeros() {
+            // Inicializa um array para armazenar os valores informados
+            let valores = [];
+            let soma = 0;
+
+            // Solicita ao usuário que informe seis números
+            for (let i = 1; i <= 6; i++) {
+                let valor = parseFloat(prompt("Informe o valor " + i + ":"));
+                
+                // Verifica se o valor inserido é um número válido
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    return;
+                }
+
+                // Adiciona o valor ao array
+                valores.push(valor);
+
+                // Verifica se o valor é inferior a 72 e, se for, soma
+                if (valor < 72) {
+                    soma += valor;
+                }
+            }
+
+            // Exibe os valores informados e a soma dos valores inferiores a 72 na tela
+            document.getElementById("valores").innerHTML = "Valores informados: " + valores.join(", ");
+            document.getElementById("soma").innerHTML = "Soma dos valores inferiores a 72: " + soma;
+        }
+    </script>
+</head>
+<body>
+    <h1>Soma de Números Inferiores a 72</h1>
+    <button onclick="processarNumeros()">Calcular</button>
+    <p id="valores"></p>
+    <p id="soma"></p>
+</body>
+</html>
